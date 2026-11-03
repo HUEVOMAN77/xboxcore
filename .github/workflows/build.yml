@@ -3,8 +3,13 @@
 # secret. To make it, from Git Bash at the repo root:
 #   openssl enc -aes-256-cbc -md sha256 -pbkdf2 -iter 200000 -salt -in assets/default.xbe -out ci/default.xbe.enc -pass pass:<key>
 #
-# Secrets: XBE_KEY (the passphrase of ci/default.xbe.enc), KEYSTORE_BASE64 (the release .jks in base64),
+# Secrets: XBE_KEY (the passphrase of ci/default.xbe.enc), KEYSTORE_BASE64 (the release PKCS#12 in base64),
 # KEYSTORE_PASSWORD, KEY_ALIAS and KEY_PASSWORD. Without the keystore the APK has a debug signature.
+# The keystore is a .p12, not a .jks: app/build.gradle signs with storeType PKCS12, so openssl makes one with
+#   openssl req -x509 -newkey rsa:2048 -keyout key.pem -out cert.pem -days 12000 -nodes -subj /CN=... -sha256
+#   openssl pkcs12 -export -name <alias> -inkey key.pem -in cert.pem -out release.p12 -passout file:<passfile>
+# which needs no Java. Keep the file and its password somewhere else too: losing them means a new signature, and
+# the new APK will not install over the old one.
 name: Build
 
 on:
@@ -71,9 +76,9 @@ jobs:
           KEY_PASSWORD: ${{ secrets.KEY_PASSWORD }}
         run: |
           if [ -z "$KEYSTORE_BASE64" ]; then echo "::warning::No release keystore: the APK has a debug signature"; exit 0; fi
-          echo "$KEYSTORE_BASE64" | base64 -d > "$RUNNER_TEMP/release.jks"
+          echo "$KEYSTORE_BASE64" | base64 -d > "$RUNNER_TEMP/release.p12"
           {
-            echo "BLACK_KEYSTORE=$RUNNER_TEMP/release.jks"
+            echo "BLACK_KEYSTORE=$RUNNER_TEMP/release.p12"
             echo "BLACK_KEYSTORE_PASSWORD=$KEYSTORE_PASSWORD"
             echo "BLACK_KEY_ALIAS=$KEY_ALIAS"
             echo "BLACK_KEY_PASSWORD=$KEY_PASSWORD"
