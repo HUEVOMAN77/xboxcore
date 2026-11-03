@@ -26,8 +26,8 @@ struct Options {
     uint32_t fps_position = 0;  // the counter's place, src/common/menu.cpp's kFpsPositionNames
     bool fps_usage = true;      // the counter's CPU and GPU load
     bool fps_temps = true;      // the counter's CPU, GPU and battery temperatures
-    uint32_t screen_filter = 0;  // the present's look: 0 none, 1 sharpen, 2 vivid, 3 scanlines, 4 CRT, 5 HDR
-    uint32_t anti_aliasing = 0;  // kAaOff, kAaFxaa or kAaSsaa
+    uint32_t screen_filter = 2;  // the present's look: 0 none, 1 sharpen, 2 vivid, 3 scanlines, 4 CRT, 5 HDR
+    uint32_t anti_aliasing = kAaFxaa;  // kAaOff, kAaFxaa or kAaSsaa
     uint32_t aspect_ratio = 0;  // the frame's shape in hundredths (133 is 4:3), 0 the whole screen; common/aspect.h
     bool bloom = true;  // the glow added over the frame, native/vulkan.cpp skips it when off
     bool fog = true;    // the distance fog, native/vulkan.cpp draws without it when off

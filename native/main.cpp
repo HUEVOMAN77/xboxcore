@@ -151,8 +151,8 @@ toml::table Table() {
     return t;
 }
 
-// a phone renders the console's frame at about 720p unless the settings say otherwise
-constexpr uint32_t kFirstRunRenderPercent = 67;
+// this phone's panel is 2400x1080 and its GPU keeps up, so a first run renders the console's frame at full size
+constexpr uint32_t kFirstRunRenderPercent = 100;
 
 // the console's 60: what a title steps once a frame (menus, their key repeat, films) runs at the console's speed
 void PhoneFrameDefaults(Settings& s) {

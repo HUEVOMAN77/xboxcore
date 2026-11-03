@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name" translatable="false">Most Wanted</string>
+    <string name="app_name" translatable="false">Most Wanted Core</string>
     <string name="port_credit">Port by Rangga Casper</string>
     <string name="donate">Donate</string>
     <string name="donate_url" translatable="false">https://sociabuzz.com/racas/tribe</string>
