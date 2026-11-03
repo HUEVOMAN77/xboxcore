@@ -106,9 +106,7 @@ constexpr uint32_t kAudioOutputs[] = {audio::kOutputAuto, audio::kOutputMono, au
 const char* const kAudioOutputNames[] = {"AUTOMATIC", "MONO", "2.0 STEREO", "5.1 SURROUND"};
 const char* const kLanguageNames[] = {"ENGLISH", "FRENCH", "GERMAN", "ITALIAN", "SPANISH",
                                       "INDONESIAN"};  // as game::kLanguages
-constexpr const char* kDonateUrl = "https://sociabuzz.com/racas/tribe";
-constexpr const char* kGithubUrl = "https://github.com/RanggaCasper";
-constexpr const char* kYoutubeUrl = "https://youtube.com/c/@RanggaCasper";
+constexpr const char* kGithubUrl = "https://github.com/HUEVOMAN77";
 constexpr uint32_t kFpsCaps[] = {30, 60, 75, 90, 120, 144, 165, 240, 360, kFpsCapRefresh, 0};
 
 int StepIndex(int index, int step, int count) {
@@ -244,7 +242,7 @@ void Changed() {
 
 enum RowId { kRenderResolution, kMaxFps, kVsync, kFpsCounter, kAniso, kAudioOutput, kLanguage, kGyro,
              kGyroSensitivity, kTouchOpacity, kTouchSize, kTouchEdit, kCheckUpdates, kAspectRatio, kScreenFilter,
-             kAntiAliasing, kFpsPosition, kFpsTemps, kStickMode, kBloom, kFog, kDonate, kGithub, kYoutube, kFpsUsage,
+             kAntiAliasing, kFpsPosition, kFpsTemps, kStickMode, kBloom, kFog, kGithub, kFpsUsage,
              kReflections, kParticles, kRain, kRainDrops, kShadows, kRoadReflections,
              kCheatNos, kCheatSpeedbreaker, kCheatCash, kCheatNoPolice, kCheatUnlockAll,
              kSkipMovies, kYellowTint, kMotionBlur, kShaderPreload, kCheatDragShift, kCheatNoTraffic };
@@ -310,22 +308,13 @@ constexpr Row kCheatRows[] = {
 };
 
 // the credits' names, an info row's id; as they are, untranslated
-const char* const kCreditNames[] = {"Rangga Casper", "Zukiru", "bagasromadon", "TGP482",
-                                    "SDL, glslang, toml++, Dear ImGui", "xemu, Cxbx-Reloaded"};
+const char* const kCreditNames[] = {"HUEVOMAN77"};
 
-// a page of its own: who made the port, and the links to support it
+// a page of its own: who made the port, and the link to it
 constexpr Row kCreditRows[] = {
     {Kind::Heading, -1, "CREDITS"},
     {Kind::Info, 0, "ANDROID PORT"},
-    {Kind::Info, 1, "HDR"},
-    {Kind::Info, 2, "BUTTON DESIGN"},
-    {Kind::Info, 3, "RECOMPILER AND RUNTIME"},
-    {Kind::Info, 4, "LIBRARIES"},
-    {Kind::Info, 5, "XBOX REFERENCES"},
-    {Kind::Heading, -1, "SUPPORT"},
-    {Kind::Link, kDonate, "DONATE"},
     {Kind::Link, kGithub, "GITHUB"},
-    {Kind::Link, kYoutube, "YOUTUBE"},
 };
 
 const std::vector<Row>& InputRows() {
@@ -661,14 +650,7 @@ void ValueRow(const Row& r) {
     if (step) RowText(r.id, step);
 }
 
-const char* LinkUrl(int id) {
-    switch (id) {
-        case kDonate: return kDonateUrl;
-        case kGithub: return kGithubUrl;
-        case kYoutube: return kYoutubeUrl;
-        default: return nullptr;
-    }
-}
+const char* LinkUrl(int id) { return id == kGithub ? kGithubUrl : nullptr; }
 
 // label left, OPEN right; a tap, click, Enter or A anywhere on the row opens the page in the browser, or the touch
 // layout's editor
@@ -762,7 +744,7 @@ void DrawTitle() {
     ImGui::TextUnformatted(title.c_str());
 }
 
-constexpr const char* kCredit = "Port by Rangga Casper";
+constexpr const char* kCredit = "Port by HUEVOMAN77";
 
 // the hint line, then the credit on the left and Back and Defaults on the right
 void DrawFooter(float em) {

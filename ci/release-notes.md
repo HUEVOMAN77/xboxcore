@@ -6,7 +6,7 @@
 
 <p align="center">
   An unofficial native Android port of the original Xbox version of <b>Need for Speed: Most Wanted</b>,<br>
-  statically recompiled with <a href="https://github.com/TGP482/XboxXBE-Recomp">XboxXBE-Recomp</a> and drawn with Vulkan.
+  statically recompiled and drawn with Vulkan. Made by <a href="https://github.com/HUEVOMAN77">HUEVOMAN77</a>.
 </p>
 
 <p align="center">
@@ -55,6 +55,6 @@ The settings panel opens from the gear at the top of the screen. Android's back 
 
 ## 🙏 Credits
 
-Built on [XboxXBE-Recomp](https://github.com/TGP482/XboxXBE-Recomp) by **TGP482** and the Android host of [Black-Android](https://github.com/RanggaCasper/Black-Android). Button Design by **bagasromadon**. Uses [SDL](https://github.com/libsdl-org/SDL), [glslang](https://github.com/KhronosGroup/glslang), [toml++](https://github.com/marzer/tomlplusplus) and [Dear ImGui](https://github.com/ocornut/imgui).
+Made by **HUEVOMAN77** — [github.com/HUEVOMAN77](https://github.com/HUEVOMAN77). Built from open-source components under their own licenses; their copyright notices ship in this repository.
 
 *Need for Speed* is a trademark of Electronic Arts Inc. This project is not affiliated with or endorsed by them.

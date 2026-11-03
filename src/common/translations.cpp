@@ -101,13 +101,8 @@ constexpr Entry kEntries[] = {
     {"TILT ANGLE", {{}, {}, {}, {u"Ángulo de inclinación"}, u"Sudut kemiringan"}},
     {"CREDITS", {u"Crédits", u"Mitwirkende", u"Crediti", u"Créditos", u"Kredit"}},
     {"ANDROID PORT", {u"Portage Android", u"Android-Portierung", u"Porting Android", u"Port de Android", u"Port Android"}},
-    {"Port by Rangga Casper", {u"Port par Rangga Casper", u"Portiert von Rangga Casper", u"Port di Rangga Casper",
-                               u"Port de Rangga Casper", u"Port oleh Rangga Casper"}},
-    {"RECOMPILER AND RUNTIME", {u"Recompilateur et runtime", u"Recompiler und Laufzeit", u"Ricompilatore e runtime", u"Recompilador y runtime", u"Recompiler dan runtime"}},
-    {"LIBRARIES", {u"Bibliothèques", u"Bibliotheken", u"Librerie", u"Bibliotecas", u"Pustaka"}},
-    {"XBOX REFERENCES", {u"Références Xbox", u"Xbox-Referenzen", u"Riferimenti Xbox", u"Referencias de Xbox", u"Referensi Xbox"}},
-    {"SUPPORT", {u"Soutenir", u"Unterstützen", u"Supporta", u"Apoyar", u"Dukungan"}},
-    {"DONATE", {u"Faire un don", u"Spenden", u"Dona", u"Donar", u"Donasi"}},
+    {"Port by HUEVOMAN77", {u"Port par HUEVOMAN77", u"Portiert von HUEVOMAN77", u"Port di HUEVOMAN77",
+                            u"Port de HUEVOMAN77", u"Port oleh HUEVOMAN77"}},
 
     // their values
     {"FULLSCREEN", {u"Plein écran", u"Vollbild", u"Schermo intero", u"Pantalla completa", u"Layar penuh"}},

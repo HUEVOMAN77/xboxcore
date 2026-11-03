@@ -1,15 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name" translatable="false">Most Wanted Core</string>
-    <string name="port_credit">Port de Rangga Casper</string>
-    <string name="donate">Donar</string>
-    <string name="donate_url" translatable="false">https://sociabuzz.com/racas/tribe</string>
-    <string name="credits">Créditos</string>
-    <string name="github" translatable="false">GitHub</string>
-    <string name="youtube" translatable="false">YouTube</string>
-    <string name="github_url" translatable="false">https://github.com/RanggaCasper</string>
-    <string name="youtube_url" translatable="false">https://youtube.com/c/@RanggaCasper</string>
-    <string name="close">Cerrar</string>
 
     <!-- updates -->
     <string name="checking_updates">Buscando actualizaciones…</string>

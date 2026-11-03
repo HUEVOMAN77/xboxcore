@@ -3,23 +3,13 @@
 
 An unofficial native Android port of the original Xbox version of *Need for Speed: Most Wanted* (Black Edition), with touch controls, controller and keyboard support and extended graphics options.
 
-The game's x86 code is statically recompiled ahead of time to C++ with [XboxXBE-Recomp](https://github.com/TGP482/XboxXBE-Recomp), then built for arm64. Drawing goes through Vulkan, and windowing, input and audio through SDL3. No emulator is involved. The Android host (Vulkan renderer, DirectSound, touch controls, settings panel) comes from [Black-Android](https://github.com/RanggaCasper/Black-Android), as [ShaolinMonks-Android](https://github.com/RanggaCasper/ShaolinMonks-Android) carries it.
+The game's x86 code is statically recompiled ahead of time to C++, then built for arm64. Drawing goes through Vulkan, and windowing, input and audio through SDL3. No emulator is involved.
 
 > [!NOTE]
 > This project does not include any game assets. You must provide the files from your own legally acquired copy of the game to install or build.
 
 > [!WARNING]
 > Work in progress. See [Status](#status).
-
-## Gameplay
-
-<p align="center">
-  <a href="https://youtu.be/x5bczwTuyhw">
-    <img src="https://img.youtube.com/vi/0ILO1_gulrg/maxresdefault.jpg" alt="Black Android gameplay on POCO F6" width="720">
-  </a>
-  <br>
-  <sub>▶ Gameplay on Xiaomi Pad 7</sub>
-</p>
 
 ## Installation
 1. Install the APK.
@@ -96,11 +86,7 @@ adb install -r app/build/outputs/apk/release/app-release.apk
 The SDK is vendored in `sdk/`, at the upstream commit in `sdk/UPSTREAM_COMMIT`, with one change: the console's language comes from `app::ConsoleLanguage()` (`sdk/runtime/kernel/xboxkrnl.cpp`).
 
 ## Credits
-- [XboxXBE-Recomp](https://github.com/TGP482/XboxXBE-Recomp) by TGP482: the static recompiler and the portable runtime (Xbox kernel, XDK libraries and Direct3D 8) this port is built on.
-- [Black-Android](https://github.com/RanggaCasper/Black-Android) and [ShaolinMonks-Android](https://github.com/RanggaCasper/ShaolinMonks-Android) by RanggaCasper: the Android host this port is built from.
-- Zukiru: the HDR screen filter.
-- [bagasromadon](https://github.com/bagasromadon): Button Design.
-- [SDL](https://github.com/libsdl-org/SDL), [glslang](https://github.com/KhronosGroup/glslang), [toml++](https://github.com/marzer/tomlplusplus) and [Dear ImGui](https://github.com/ocornut/imgui).
-- [xemu](https://github.com/xemu-project/xemu) and [Cxbx-Reloaded](https://github.com/Cxbx-Reloaded/Cxbx-Reloaded), which XboxXBE-Recomp used as references for Xbox hardware and API behavior.
+
+Made by [HUEVOMAN77](https://github.com/HUEVOMAN77). Built from open-source components under their own licenses; their copyright notices ship in this repository.
 
 *Need for Speed* is a trademark of Electronic Arts Inc. This project is not affiliated with or endorsed by them.

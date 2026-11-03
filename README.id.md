@@ -3,23 +3,13 @@
 
 Port Android native tidak resmi dari *Need for Speed: Most Wanted* (Black Edition) versi Xbox orisinal, dengan kontrol sentuh, dukungan controller dan keyboard, serta opsi grafis tambahan.
 
-Kode x86 game ini direkompilasi secara statis ke C++ sebelumnya dengan [XboxXBE-Recomp](https://github.com/TGP482/XboxXBE-Recomp), lalu dibangun untuk arm64. Gambar ditampilkan lewat Vulkan, sedangkan jendela, input, dan audio lewat SDL3. Tidak ada emulator yang dipakai. Host Android-nya (renderer Vulkan, DirectSound, kontrol sentuh, panel pengaturan) berasal dari [Black-Android](https://github.com/RanggaCasper/Black-Android), sebagaimana dibawa oleh [ShaolinMonks-Android](https://github.com/RanggaCasper/ShaolinMonks-Android).
+Kode x86 game ini direkompilasi secara statis ke C++ sebelumnya, lalu dibangun untuk arm64. Gambar ditampilkan lewat Vulkan, sedangkan jendela, input, dan audio lewat SDL3. Tidak ada emulator yang dipakai.
 
 > [!NOTE]
 > Proyek ini tidak menyertakan aset game apa pun. Untuk memasang atau membangunnya, kamu harus menyediakan file dari salinan game milikmu sendiri yang didapat secara legal.
 
 > [!WARNING]
 > Masih dalam pengembangan. Lihat [Status](#status).
-
-## Gameplay
-
-<p align="center">
-  <a href="https://youtu.be/x5bczwTuyhw">
-    <img src="https://img.youtube.com/vi/0ILO1_gulrg/maxresdefault.jpg" alt="Gameplay Most Wanted Android" width="720">
-  </a>
-  <br>
-  <sub>▶ Gameplay di Xiaomi Pad 7</sub>
-</p>
 
 ## Instalasi
 1. Pasang APK-nya.
@@ -96,11 +86,7 @@ adb install -r app/build/outputs/apk/release/app-release.apk
 SDK disertakan di `sdk/`, pada commit upstream yang tercatat di `sdk/UPSTREAM_COMMIT`, dengan satu perubahan: bahasa konsol diambil dari `app::ConsoleLanguage()` (`sdk/runtime/kernel/xboxkrnl.cpp`).
 
 ## Kredit
-- [XboxXBE-Recomp](https://github.com/TGP482/XboxXBE-Recomp) oleh TGP482: recompiler statis dan runtime portabel (kernel Xbox, library XDK, dan Direct3D 8) yang menjadi dasar port ini.
-- [Black-Android](https://github.com/RanggaCasper/Black-Android) dan [ShaolinMonks-Android](https://github.com/RanggaCasper/ShaolinMonks-Android) oleh RanggaCasper: host Android yang menjadi dasar port ini.
-- Zukiru: screen filter HDR.
-- [bagasromadon](https://github.com/bagasromadon): desain tombol.
-- [SDL](https://github.com/libsdl-org/SDL), [glslang](https://github.com/KhronosGroup/glslang), [toml++](https://github.com/marzer/tomlplusplus), dan [Dear ImGui](https://github.com/ocornut/imgui).
-- [xemu](https://github.com/xemu-project/xemu) dan [Cxbx-Reloaded](https://github.com/Cxbx-Reloaded/Cxbx-Reloaded), yang dipakai XboxXBE-Recomp sebagai referensi perilaku hardware dan API Xbox.
+
+Dibuat oleh [HUEVOMAN77](https://github.com/HUEVOMAN77). Dibangun dari komponen sumber terbuka di bawah lisensinya masing-masing; NOTICE hak ciptanya ikut dalam repositori ini.
 
 *Need for Speed* adalah merek dagang Electronic Arts Inc. Proyek ini tidak berafiliasi dengan maupun didukung oleh mereka.

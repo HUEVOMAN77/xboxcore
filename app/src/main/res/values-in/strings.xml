@@ -1,11 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- Indonesian (Android's "in" covers id too) -->
 <resources>
-    <string name="port_credit">Port oleh Rangga Casper</string>
-    <string name="donate">Donasi</string>
-    <string name="credits">Kredit</string>
-    <string name="close">Tutup</string>
-
     <!-- updates -->
     <string name="checking_updates">Memeriksa pembaruan…</string>
     <string name="update_check_failed">Gagal memeriksa pembaruan</string>
