@@ -1,54 +1,54 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name" translatable="false">Most Wanted Core</string>
-    <string name="port_credit">Port by Rangga Casper</string>
-    <string name="donate">Donate</string>
+    <string name="port_credit">Port de Rangga Casper</string>
+    <string name="donate">Donar</string>
     <string name="donate_url" translatable="false">https://sociabuzz.com/racas/tribe</string>
-    <string name="credits">Credits</string>
+    <string name="credits">Créditos</string>
     <string name="github" translatable="false">GitHub</string>
     <string name="youtube" translatable="false">YouTube</string>
     <string name="github_url" translatable="false">https://github.com/RanggaCasper</string>
     <string name="youtube_url" translatable="false">https://youtube.com/c/@RanggaCasper</string>
-    <string name="close">Close</string>
+    <string name="close">Cerrar</string>
 
     <!-- updates -->
-    <string name="checking_updates">Checking for updates…</string>
-    <string name="update_check_failed">Update check failed</string>
-    <string name="update_unreachable">Couldn\'t reach GitHub. Check your internet connection and try again.</string>
-    <string name="no_update">No update</string>
-    <string name="latest_version">You have the latest version (%1$s).</string>
-    <string name="update_available">Update available</string>
-    <string name="update_is_available">%1$s is available</string>
-    <string name="update_installed">(you have %1$s)</string>
-    <string name="update_whats_new">What\'s new:</string>
-    <string name="update_install_over">Install it over this one: your settings and saves stay.</string>
-    <string name="download">Download</string>
-    <string name="skip_version">Skip this version</string>
-    <string name="later">Later</string>
+    <string name="checking_updates">Buscando actualizaciones…</string>
+    <string name="update_check_failed">No se pudo buscar actualizaciones</string>
+    <string name="update_unreachable">No se pudo conectar con GitHub. Verifica tu conexión a internet e inténtalo de nuevo.</string>
+    <string name="no_update">Sin actualizaciones</string>
+    <string name="latest_version">Ya tienes la última versión (%1$s).</string>
+    <string name="update_available">Actualización disponible</string>
+    <string name="update_is_available">%1$s está disponible</string>
+    <string name="update_installed">(tienes %1$s)</string>
+    <string name="update_whats_new">Novedades:</string>
+    <string name="update_install_over">Instálala encima de esta: tus ajustes y partidas guardadas se conservan.</string>
+    <string name="download">Descargar</string>
+    <string name="skip_version">Omitir esta versión</string>
+    <string name="later">Después</string>
 
     <!-- where the game goes -->
-    <string name="storage_access">Storage access</string>
-    <string name="storage_text">Most Wanted reads the game from the MostWanted folder on your phone\'s storage and keeps its saves, logs and crash reports there. The game can\'t start without this access:\n\n%1$s\n\n%2$s</string>
-    <string name="storage_all_files">On the next screen turn on \"Allow access to manage all files\" for Most Wanted, then come back.</string>
-    <string name="storage_permission">Allow Most Wanted to access your storage on the next screen.</string>
-    <string name="allow_access">Allow access</string>
-    <string name="game_files">Game files</string>
-    <string name="game_files_text">Copy the game into the MostWanted folder on your phone\'s storage:\n\n%1$s\n\nor into a MostWanted folder at the top of your SD card.\n\nIts disc image (.iso), or default.xbe with its folders. The game starts as soon as they are there.\n\nOr import the disc image from your Downloads, a cloud drive or a USB stick.</string>
+    <string name="storage_access">Acceso al almacenamiento</string>
+    <string name="storage_text">Most Wanted Core lee el juego de la carpeta MostWanted en el almacenamiento del teléfono, y ahí guarda sus partidas, registros y reportes de error. El juego no puede iniciarse sin este acceso:\n\n%1$s\n\n%2$s</string>
+    <string name="storage_all_files">En la pantalla siguiente activa «Permitir el acceso para administrar todos los archivos» para Most Wanted Core, y regresa.</string>
+    <string name="storage_permission">Permite que Most Wanted Core acceda a tu almacenamiento en la pantalla siguiente.</string>
+    <string name="allow_access">Permitir acceso</string>
+    <string name="game_files">Archivos del juego</string>
+    <string name="game_files_text">Copia el juego a la carpeta MostWanted en el almacenamiento del teléfono:\n\n%1$s\n\no a una carpeta MostWanted en la raíz de tu tarjeta SD.\n\nSu imagen de disco (.iso), o default.xbe con sus carpetas. El juego se inicia en cuanto estén ahí.\n\nTambién puedes importar la imagen de disco desde Descargas, un almacenamiento en la nube o una memoria USB.</string>
 
     <!-- importing a disc image -->
-    <string name="import_game">Import game</string>
-    <string name="no_file_picker">This phone has no file picker to choose the disc image with.</string>
-    <string name="choose_iso">Choose the game\'s disc image, a file ending in .iso.</string>
-    <string name="not_enough_space">Not enough space</string>
-    <string name="space_needed">The disc image needs %1$.1f GB free, there are %2$.1f GB.</string>
-    <string name="import_starting">Starting…</string>
-    <string name="importing">Importing %1$s</string>
-    <string name="import_progress">%1$.2f of %2$.2f GB</string>
-    <string name="not_xbox_image">%1$s is not an Xbox disc image.</string>
-    <string name="copy_stopped">The copy stopped early.</string>
-    <string name="copy_failed">The copy failed: %1$s</string>
-    <string name="not_in_place">The image could not be put in place.</string>
-    <string name="game_imported">Game imported</string>
-    <string name="game_imported_text">%1$s is in place. The game starts in a moment.</string>
-    <string name="import_failed">Import failed</string>
+    <string name="import_game">Importar juego</string>
+    <string name="no_file_picker">Este teléfono no tiene un selector de archivos para elegir la imagen de disco.</string>
+    <string name="choose_iso">Elige la imagen de disco del juego, un archivo que termine en .iso.</string>
+    <string name="not_enough_space">Espacio insuficiente</string>
+    <string name="space_needed">La imagen de disco necesita %1$.1f GB libres; hay %2$.1f GB.</string>
+    <string name="import_starting">Comenzando…</string>
+    <string name="importing">Importando %1$s</string>
+    <string name="import_progress">%1$.2f de %2$.2f GB</string>
+    <string name="not_xbox_image">%1$s no es una imagen de disco de Xbox.</string>
+    <string name="copy_stopped">La copia se detuvo antes de terminar.</string>
+    <string name="copy_failed">La copia falló: %1$s</string>
+    <string name="not_in_place">No se pudo colocar la imagen en su lugar.</string>
+    <string name="game_imported">Juego importado</string>
+    <string name="game_imported_text">%1$s ya está en su lugar. El juego se inicia en un momento.</string>
+    <string name="import_failed">Error al importar</string>
 </resources>

@@ -775,7 +775,7 @@ void DrawFooter(float em) {
     ImGui::PopStyleColor();
     float bw = em * 8;
     ImGui::AlignTextToFramePadding();
-    ImGui::TextColored(kDim, "%s", kCredit);
+    ImGui::TextColored(kDim, "%s", Ui(kCredit, false).c_str());
     ImGui::SameLine(0, 0);
     float buttons_pad = ImGui::GetContentRegionAvail().x - bw * 2 - ImGui::GetStyle().ItemSpacing.x;
     ImGui::SetCursorPosX(ImGui::GetCursorPosX() + std::max(buttons_pad, 0.0f));
@@ -1075,7 +1075,8 @@ void DrawFpsCounter(double fps) {
     float big = ImGui::GetFontSize() * 1.5f, small = ImGui::GetFontSize();
     ImVec2 fs = ImGui::GetFont()->CalcTextSizeA(big, FLT_MAX, 0, text);
     ImVec2 ps = perf.empty() ? ImVec2(0, 0) : ImGui::GetFont()->CalcTextSizeA(small, FLT_MAX, 0, perf.c_str());
-    ImVec2 cs = ImGui::GetFont()->CalcTextSizeA(small, FLT_MAX, 0, kCredit);
+    const std::string credit = Ui(kCredit, false);  // measured and drawn as one string, so its width is the shown one
+    ImVec2 cs = ImGui::GetFont()->CalcTextSizeA(small, FLT_MAX, 0, credit.c_str());
     // the first line: the frame rate, the credit beside it
     float gap = small;
     float line_w = fs.x + gap + cs.x;
@@ -1099,7 +1100,7 @@ void DrawFpsCounter(double fps) {
     float line_x = x(line_w);
     DrawShadowed(dl, big, ImVec2(line_x, y), IM_COL32(255, 214, 90, 255), text);
     // the credit beside the frame rate, dimmer, its foot on the same line
-    DrawShadowed(dl, small, ImVec2(line_x + fs.x + gap, y + fs.y - cs.y), IM_COL32(200, 180, 150, 220), kCredit);
+    DrawShadowed(dl, small, ImVec2(line_x + fs.x + gap, y + fs.y - cs.y), IM_COL32(200, 180, 150, 220), credit.c_str());
     if (!perf.empty()) DrawShadowed(dl, small, ImVec2(x(ps.x), y + fs.y), IM_COL32(235, 235, 235, 255), perf.c_str());
 }
 

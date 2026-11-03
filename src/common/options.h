@@ -52,7 +52,7 @@ struct Options {
     bool cheat_drag_shift = false;    // the gears shift by themselves in drag races, from the next race
     bool skip_movies = false;         // the movies end as they start, src/game/game.cpp
     uint32_t audio_output = 0;  // audio::kOutputAuto, kOutputStereo, kOutputSurround or kOutputMono
-    std::string language = "int";  // one of kLanguages
+    std::string language = "esp";  // one of kLanguages: the disc's own Spanish, from the first run
     std::map<std::string, std::string> keys;  // action id to key names, absent is the default
     std::map<std::string, std::string> pad;   // action id to a controller's input, absent is SDL's mapping
 };

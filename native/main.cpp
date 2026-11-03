@@ -166,6 +166,7 @@ void PhoneFrameDefaults(Settings& s) {
 Settings DefaultSettings() {
     Settings s;
     s.render_percent = kFirstRunRenderPercent;
+    s.aniso = 16;  // the road and the walls read sharp to the horizon; the game's own samplers ask for less
     PhoneFrameDefaults(s);
     return s;
 }

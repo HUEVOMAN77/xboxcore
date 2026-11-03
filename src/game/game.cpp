@@ -214,8 +214,8 @@ void ResetCarFrame(X86Context& ctx) {
     LOGI("reset car: %s", done ? "done" : "no place kept");
 }
 
-// only English and Indonesian are offered; Indonesian plays the English table, translated (prompts.cpp)
-bool LanguageAvailable(const std::string& code) { return code == "int" || code == "ind"; }
+// English and Indonesian are always there; Spanish is the disc's own table, and the recomp's panel in Latin American
+bool LanguageAvailable(const std::string& code) { return code == "int" || code == "ind" || code == "esp"; }
 
 // GameFlowManager's state (0x4936B8, written by 0x1C5CD7 and the rest): 3 the front end, 6 racing, loading between
 constexpr uint32_t kGameFlowState = 0x4936B8;
@@ -472,7 +472,14 @@ X86_FUNC(sub_0013EEE0) {
 
 namespace app {
 
-// the console's XC_LANGUAGE the game reads at boot: English, for Indonesian too, which the disc lacks
-uint32_t ConsoleLanguage() { return 1; }
+// the console's XC_LANGUAGE the game reads at boot; Indonesian plays the English table, which is why it is 1 too
+uint32_t ConsoleLanguage() {
+    const std::string& l = game::BootLanguage();
+    if (l == "deu") return 3;
+    if (l == "fra") return 4;
+    if (l == "esp") return 5;
+    if (l == "ita") return 6;
+    return 1;
+}
 
 }  // namespace app

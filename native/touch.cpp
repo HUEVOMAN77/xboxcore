@@ -1773,7 +1773,7 @@ void DrawControl(ImDrawList* dl, size_t i, bool on, int fade, float th) {
                 dl->AddLine(ImVec2(cx - hw * 0.55f, y), ImVec2(cx + hw * 0.55f, y), Fade(kEdge, (on ? 150 : 70) * fade / 100), th);
             }
             CentredText(dl, ImVec2(cx, cy + hh * 0.72f), hw * 0.5f, on ? Fade(255, 255, 255, 255) : Fade(pedal, 235 * fade / 100),
-                        b.press == kAnalogRT ? "GAS" : "BRAKE");
+                        app::Ui(b.press == kAnalogRT ? "GAS" : "BRAKE").c_str());
             return;
         }
     }
@@ -1786,7 +1786,7 @@ void DrawControl(ImDrawList* dl, size_t i, bool on, int fade, float th) {
         CentredText(dl, ImVec2(cx, cy - (shape == Shape::Tab ? hh * 0.08f : 0)), size, text, b.label);
     }
     if (!menu_caption.empty()) DrawCaption(dl, i, cx, cy, fade, menu_caption.c_str());
-    else if (b.caption) DrawCaption(dl, i, cx, cy, fade, b.caption);
+    else if (b.caption) DrawCaption(dl, i, cx, cy, fade, app::Ui(b.caption).c_str());
 }
 
 // the editor's boxes for the HUD's items, under the controls

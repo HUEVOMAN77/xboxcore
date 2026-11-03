@@ -36,7 +36,7 @@ const Prompt kPrompts[] = {
       "Tocca lo schermo per iniziare", "Toca la pantalla para empezar", "Ketuk di mana saja untuk mulai"}},
     // a tutorial's "Press (A) To Continue", three objects: a tap anywhere is its A (fe_mouse.cpp's g_tap_anywhere)
     {0x9D8F2513, true,  // "Press"
-     {"Tap or press", "Touchez ou appuyez sur", "Tippe oder dr\xFC" "cke", "Tocca o premi", "Toca o pulsa",
+     {"Tap or press", "Touchez ou appuyez sur", "Tippe oder dr\xFC" "cke", "Tocca o premi", "Toca o presiona",
       "Ketuk atau tekan"}},
     {0xD0258C0D, true,  // "To Continue"
      {nullptr, nullptr, nullptr, nullptr, nullptr, "untuk lanjut"}},
