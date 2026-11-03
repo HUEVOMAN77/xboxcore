@@ -8,8 +8,9 @@
 # The keystore is a .p12, not a .jks: app/build.gradle signs with storeType PKCS12, so openssl makes one with
 #   openssl req -x509 -newkey rsa:2048 -keyout key.pem -out cert.pem -days 12000 -nodes -subj /CN=... -sha256
 #   openssl pkcs12 -export -name <alias> -inkey key.pem -in cert.pem -out release.p12 -passout file:<passfile>
-# which needs no Java. Keep the file and its password somewhere else too: losing them means a new signature, and
-# the new APK will not install over the old one.
+# which needs no Java. KEYSTORE_BASE64 is `base64 -w0 release.p12`, padding included. Keep the file and its
+# password somewhere off GitHub too: losing them means a new signature, and the new APK will not install over
+# the old one.
 name: Build
 
 on:
@@ -76,7 +77,9 @@ jobs:
           KEY_PASSWORD: ${{ secrets.KEY_PASSWORD }}
         run: |
           if [ -z "$KEYSTORE_BASE64" ]; then echo "::warning::No release keystore: the APK has a debug signature"; exit 0; fi
-          echo "$KEYSTORE_BASE64" | base64 -d > "$RUNNER_TEMP/release.p12"
+          # base64 -d wants the padding, and a secret copied from a tool that omits it decodes to nothing
+          echo "$KEYSTORE_BASE64" | base64 -d > "$RUNNER_TEMP/release.p12" || { echo "::error::KEYSTORE_BASE64 is not valid base64"; exit 1; }
+          wc -c < "$RUNNER_TEMP/release.p12"
           {
             echo "BLACK_KEYSTORE=$RUNNER_TEMP/release.p12"
             echo "BLACK_KEYSTORE_PASSWORD=$KEYSTORE_PASSWORD"
