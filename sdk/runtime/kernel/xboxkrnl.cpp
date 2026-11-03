@@ -1232,6 +1232,10 @@ static uint32_t VideoFlags() { return (app::Widescreen() ? 0x00010000 : 0) | 0x0
 
 KERNEL_EXPORT(24, ExQueryNonVolatileSetting, 5) {
     uint32_t index = a[0], type_out = a[1], value = a[2], len = a[3], result_len = a[4];
+    // a game that never asks for the language never changes it: log the first asks, they are the proof
+    static int asks = 0;
+    if (asks < 24) LOGR("ExQueryNonVolatileSetting %X", index);
+    asks++;
     uint32_t v = 0;
     switch (index) {
         case 7: v = ::app::ConsoleLanguage(); break;  // XC_LANGUAGE

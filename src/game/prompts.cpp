@@ -3,6 +3,7 @@
 // GetLocalizedString (0x124C40) and the copies into a buffer (0x131DB0, ...), goes through SearchForString (0x124B50,
 // the hash in edx), which answers with the string's text, Latin-1 bytes. The hashes are the same in every language.
 #include <algorithm>
+#include <atomic>
 #include <cstring>
 #include <iterator>
 #include <mutex>
@@ -10,6 +11,7 @@
 #include <unordered_map>
 
 #include "common/options.h"
+#include "core/log.h"
 #include "cpu/x86_ops.h"
 #include "kernel/kernel.h"
 #include "kernel/memory.h"
@@ -121,4 +123,12 @@ X86_FUNC(sub_00124B50) {
         }
     }
     __imp__sub_00124B50(ctx, base);
+    // the disc's own answer, the first times one is asked: which language the table this dump carries really is
+    static std::atomic<int> asked{0};
+    if (ctx.eax && asked.fetch_add(1, std::memory_order_relaxed) < 24) {
+        char text_buf[128];
+        std::strncpy(text_buf, static_cast<const char*>(kernel::HostPtr(ctx.eax)), sizeof(text_buf) - 1);
+        text_buf[sizeof(text_buf) - 1] = '\0';
+        LOGR("disc string %08X: %s", hash, text_buf);
+    }
 }
