@@ -33,7 +33,7 @@
 4. The game starts as soon as it finds the files.
 
 > [!TIP]
-> Saves are in `MostWanted/hdd`, logs and crash reports in `MostWanted/logs`. Updating from a version that kept the saves in `Android/data/com.racas.mostwanted/files/hdd` copies them over at the first launch. Settings and the shader cache stay in `Android/data/com.racas.mostwanted/files`.
+> Saves are in `MostWanted/hdd`, logs and crash reports in `MostWanted/logs`. Updating from a version that kept the saves in `Android/data/com.racas.mostwanted/files/hdd` copies them over at the first launch. Settings and the shader cache stay in `Android/data/com.xboxcore.mostwanted/files`.
 
 ## ✨ Features
 
